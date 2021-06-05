@@ -185,6 +185,9 @@ main .content a:hover{
     header .subhead .subsub span{
         font-size:3.1rem;
     }
+    header .subhead img{
+        width:100%;
+    }
     main .one, main .two, main .three{
         flex-direction: column;
         width:95%;
