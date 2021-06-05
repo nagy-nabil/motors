@@ -96,8 +96,8 @@ span.fa:hover div {
     display:block;
 }
 header .subhead{
-    width:50%;
-    margin:70px;
+    width:60%;
+    margin:70px 0;
     display:flex;
     flex-flow:row wrap;
     justify-content: space-between;
@@ -127,7 +127,7 @@ main{
     align-items: center;
 }
 main .one,main .two,main .three{
-    width:50%;
+    width:60%;
     margin:30px 0;
     background-color:white;
     display:flex;
@@ -168,6 +168,7 @@ main .content a:hover{
 }
 /*   MEDIA QUARY   */
 @media screen and (max-width:900px) {
+    header{width:100%}
     header>ul.nav{
         display:none;
     } 
@@ -175,13 +176,18 @@ main .content a:hover{
         display:block;
     }
     header .subhead{
+        width:100%;
         flex-direction: column;
+    }
+    header .subhead .subsub{
+        width:100;
     }
     header .subhead .subsub span{
         font-size:3.1rem;
     }
-    main .two, main .three{
+    main .one, main .two, main .three{
         flex-direction: column;
+        width:95%;
     }
     main .two .content, main .three .content{
         width:95%
