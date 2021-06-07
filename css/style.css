@@ -225,7 +225,7 @@ footer .cont .footend p{
 }
 /*   MEDIA QUARY   */
 @media screen and (max-width:1200px) {
-    header, footer , main{width:100%}
+    header{width:100%}
     header>ul.nav{
         display:none;
     } 
@@ -233,12 +233,12 @@ footer .cont .footend p{
         display:block;
     }
     header .subhead{
-        width:100%;
+        width:95%;
         flex-direction: column;
-        align-items:center;
+        align-items:flex-start;
     }
     header .subhead .subsub{
-        width:100;
+        width:100%;
     }
     header .subhead .subsub span{
         font-size:3.1rem;
@@ -257,7 +257,7 @@ footer .cont .footend p{
         width:95%;
         flex-direction:column;
     }
-    footer .cont div{
+    footer .cont div, footer .cont div.mainmenu{
         width:98%;
     }
 }
