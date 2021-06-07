@@ -14,6 +14,17 @@
 h1 , h2{
     text-transform: uppercase;
 }
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+ul li a{
+    text-transform: uppercase;
+    padding:15px;
+    font-size:1.1rem;
+    position:relative;
+}
 a{
     text-decoration:none;
     color:inherit;
@@ -21,6 +32,7 @@ a{
 }
 p{
     word-spacing: 3px;
+    line-height:1.4rem;
 }
 header , main, footer{
     width: 100%;
@@ -41,21 +53,10 @@ header h1{
     font-size:3.7rem;
     letter-spacing: 4px;
 }
-header ul {
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
 header ul li{
     display:inline-block;
 }
-header ul li a{
-    text-transform: uppercase;
-    padding:15px;
-    font-size:1.1rem;
-    position:relative;
-}
-a.active ,  header ul li a:hover{
+a.active ,  ul li a:hover{
     color:red
 }
 header > ul li a:not(.lastchild)::after{
@@ -166,9 +167,65 @@ main .content a:hover{
     color:red;
     background-color:black;
 }
+/*    footer styling */
+footer{
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) ,url('../images/footer-bg.jpg') left top;
+    background-size:cover;
+    display:flex;
+    justify-content:center;
+    width:100%;
+    color:white;
+    padding-top:50px;
+}
+footer .cont{
+    width:60%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+}
+footer .cont div{
+    width:calc(75%/2.1);
+    margin:30px 0;
+}
+footer .cont div.mainmenu{
+    width:25%;
+}
+footer .cont h2{
+    margin-bottom:20px;
+}
+footer .cont div ul li a{
+    padding:15px 0 0 0;
+    font-weight:600;
+}
+footer .cont .social .fa{
+    padding:15px;
+    font-size:1.5rem;
+    background:dimgrey;
+    margin:10px;
+    transition:all .3s ease-in-out;
+}
+footer .cont .social p{
+    margin:15px 0;
+}
+footer .cont .social .fa:hover{
+    background-color: #d54a4a;
+}
+footer .cont .footend{
+    width:100%;
+    background: url("../images/copyright-bg.png") no-repeat center bottom;
+    background-size:contain;
+    height:96px;
+    margin:30px 0 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+footer .cont .footend p{
+    text-align: center;
+}
 /*   MEDIA QUARY   */
-@media screen and (max-width:900px) {
-    header{width:100%}
+@media screen and (max-width:1200px) {
+    header, footer , main{width:100%}
     header>ul.nav{
         display:none;
     } 
@@ -178,6 +235,7 @@ main .content a:hover{
     header .subhead{
         width:100%;
         flex-direction: column;
+        align-items:center;
     }
     header .subhead .subsub{
         width:100;
@@ -194,5 +252,12 @@ main .content a:hover{
     }
     main .two .content, main .three .content{
         width:95%
+    }
+    footer .cont{
+        width:95%;
+        flex-direction:column;
+    }
+    footer .cont div{
+        width:98%;
     }
 }
