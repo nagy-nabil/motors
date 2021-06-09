@@ -11,6 +11,9 @@
     width:100%;
     font-family: 'Montserrat', sans-serif;
 }
+header .subhead, main >div , footer .cont{
+    width:65%;
+}
 h1 , h2{
     text-transform: uppercase;
 }
@@ -24,6 +27,7 @@ ul li a{
     padding:15px;
     font-size:1.1rem;
     position:relative;
+    transition:all .2s ease-out;
 }
 a{
     text-decoration:none;
@@ -56,7 +60,7 @@ header h1{
 header ul li{
     display:inline-block;
 }
-a.active ,  ul li a:hover{
+a.active ,  ul li a:hover,main.products .category ul li a.activeproduct{
     color:red
 }
 header > ul li a:not(.lastchild)::after{
@@ -97,11 +101,13 @@ span.fa:hover div {
     display:block;
 }
 header .subhead{
-    width:60%;
     margin:70px 0;
     display:flex;
     flex-flow:row wrap;
     justify-content: space-between;
+}
+header .subhead img{
+    width:33%;
 }
 header .subhead .subsub{
     width:65%;
@@ -122,19 +128,21 @@ header .subhead .subsub p{
 /*    main styling */
 main{
     padding-top:20px;
-    background-color:#fef8f8;
+    background-color:#EAE9EF;
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 main .one,main .two,main .three{
-    width:60%;
     margin:30px 0;
     background-color:white;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
     box-shadow:0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+main .two,main .three{
+    padding-top:20px;
 }
 main .two .content{
     width: calc(100%/2.2);
@@ -144,6 +152,10 @@ main .three .content{
 }
 main .content img{
     width:100%;
+    transition:all .5s ease-in;
+}
+main .content img:hover{
+    transform:scale(1.1);
 }
 main .content h2{
     font-size:2rem;
@@ -152,7 +164,7 @@ main .content h2{
 main .content p, main .content h2, main .content a{
     margin:30px 30px;
 }
-main .content a{
+main.index .content a, main.services .content a{
     padding: 15px;
     /* padding-left: 28px; */
     width: auto;
@@ -178,7 +190,6 @@ footer{
     padding-top:50px;
 }
 footer .cont{
-    width:60%;
     display:flex;
     flex-flow:row wrap;
     justify-content:space-between;
@@ -223,9 +234,240 @@ footer .cont .footend{
 footer .cont .footend p{
     text-align: center;
 }
+footer .footend a{
+    display:inline;
+    color:#d54a4a;
+    text-decoration:underline;
+
+}
+/* main products styling */
+main .gallery {
+    display:flex;
+    flex-flow:row wrap;
+    margin-bottom:30px;
+}
+main .gallery .imgcont{
+    width:calc(100%/4);
+    position:relative;
+}
+main .gallery .imgcont img{
+    width:100%;
+    height:100%;
+}
+main .gallery .imgcont .name{
+    color:white;
+    text-align:right;
+    font-size:19px;
+    position:absolute;
+    width:100%;
+    height:auto;
+    padding:10px;
+    background:rgba(36, 35, 35, 0.603);
+    left:0;
+    bottom:0;
+    margin:0;
+    z-index: 100;
+    transition:all .3s ease-out;
+    opacity:0;
+}
+main .gallery .imgcont:hover .name{
+    opacity:1;
+}
+main .gallery .imgcont:hover img{
+    transform:none;
+}
+main.products .submain{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+main.products .submain aside{
+    width:30%;
+    display:flex;
+    flex-direction: column;
+}
+main.products aside .category{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    background-color:black;
+    color:white;
+    margin-bottom:10%;
+    padding-bottom:2%;
+}
+main.products aside .category h2{
+    background:#d54a4a;
+    width:100%;
+    margin:0;
+    padding:20px;
+    text-align: center;   
+}
+main.products aside .category ul{
+    width:85%;
+}
+main.products aside .category ul li a {
+    display:flex;
+    flex-direction:row;
+    background: none;
+    font-size:15px;
+    text-transform:none;
+    margin:0;
+    padding: 10px;
+    transition:all .25s ease-out;
+    border:none;
+}
+main.products aside .category ul li a img{
+    width:22px;
+    vertical-align: middle;
+    margin-right:3%;
+}
+main.products aside .category ul li a span.fa{
+    margin-left:auto;
+    display:none;
+}
+main.products aside .category ul li a:hover span.fa, main.products .category ul li a.activeproduct span.fa{
+    display: block;
+}
+main.products aside .callus{
+    color:white;
+    background:url("../images/call-us-bg.jpg");
+    background-size: cover;
+    margin-bottom:5%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+main.products aside .callus p{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+main.products aside .callus a{
+    background:none;
+    margin:0;
+    color:#d54a4a;
+    padding-bottom: 40px;
+    font-size:1.5rem;
+}
+main.products aside .callus a:hover{
+    color:#337ab7;
+}
+main .submain .buy {
+    width:68%;
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+main .submain .buy h3{
+    width:100%;
+    text-transform: capitalize;
+    font-size:1.5rem;
+    margin-bottom:5%;
+}
+main .submain .buy .info{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+    background: white;
+    width:calc(100%/3.1);
+    padding:2%;
+    font-weight: 600;
+    margin-bottom: 4%;
+    box-shadow:0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+main .submain .buy .info p{
+    margin:0;
+}
+main .submain .buy .info hr{
+    border:none;
+    height:2px;
+    background-color:#eee ;
+    margin:15px 0 10px;
+}
+main .submain .buy .info .price
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+main .submain .buy .info .price span{
+    margin-right:auto;
+}
+main .submain .buy .info .price a{
+    margin:0;
+    color:rgb(190, 177, 177);
+}
+main .submain .buy .info .price a:hover{
+    color:#d54a4a;
+    background:none;
+}
+main .submain .buy .info .price img{
+    width:16px;
+    height:16px;
+    margin-left:0%;
+}
+/*     main services styling */
+main.services .customer{
+    background-color: white;
+    box-shadow:0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-around;
+    margin:2% 0 4%;
+    padding:3% 1.5%;
+}
+main.services .customer h1{
+    width:100%;
+    color:#333;
+    text-align: center;
+}
+main.services .customer .subcustomer{
+    width:calc(100%/2.4);
+    background-color: #f5f5f5;
+    margin:1% 0 1%;
+    padding:15px;
+    display:flex;
+    flex-direction: column;
+}
+main.services .customer .subcustomer .start{
+    display:flex;
+    align-items:center;
+    margin-bottom: 5%;
+}
+main.services .customer .subcustomer .start span{
+    margin-right:3%;
+    background-color: #d54a4a;
+    color:white;
+    padding:7px;
+    text-align:center;
+    font-size:19px;
+}
+main.services .customer .subcustomer .start h3{
+    font-size:1.3rem;
+}
+main.services .customer .subcustomer p{
+    color:#333;
+}
+/*      gallery main styling */
+main.gallery .submain .buy{
+    margin-top:5%;
+    width:100%;
+}
 /*   MEDIA QUARY   */
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1500px){
+    main.products .submain aside .category h2{
+        padding-left:3px;
+        text-align: left;
+    }
+    main.products .submain .buy .info{
+        width:calc(100%/2.03);
+    }
+}
+@media screen and (max-width:900px) {
     header{width:100%}
+    header .subhead ,main >div, footer .cont,main.products .submain .buy,main.products .submain aside{
+        width:95%;
+    }
     header>ul.nav{
         display:none;
     } 
@@ -233,7 +475,6 @@ footer .cont .footend p{
         display:block;
     }
     header .subhead{
-        width:95%;
         flex-direction: column;
         align-items:flex-start;
     }
@@ -241,20 +482,38 @@ footer .cont .footend p{
         width:100%;
     }
     header .subhead .subsub span{
-        font-size:3.1rem;
+        font-size:3rem;
     }
     header .subhead img{
         width:100%;
     }
     main .one, main .two, main .three{
         flex-direction: column;
-        width:95%;
     }
     main .two .content, main .three .content{
-        width:95%
+        width:100%;
+    }
+    main .gallery .imgcont{
+        width:calc(100%/2);
+    }
+    main .submain .buy {
+        order:1;
+        justify-content:center;
+    }
+    main .submain .buy .info{
+        width:calc(100%/1.2);
+    }
+    main.products .submain aside{
+        order:2;
+    }
+    main.services .customer{
+        flex-flow: column;
+        justify-content: space-around;
+    }
+    main.services .customer .subcustomer{
+        width:98%;
     }
     footer .cont{
-        width:95%;
         flex-direction:column;
     }
     footer .cont div, footer .cont div.mainmenu{
