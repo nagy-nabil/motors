@@ -500,7 +500,7 @@ main.gallery .submain .buy{
         order:1;
         justify-content:center;
     }
-    main .submain .buy .info{
+    main.products .submain .buy .info , main.gallery .submain .buy .info {
         width:calc(100%/1.2);
     }
     main.products .submain aside{
