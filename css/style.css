@@ -459,7 +459,7 @@ main.gallery .submain .buy{
         padding-left:3px;
         text-align: left;
     }
-    main.products .submain .buy .info{
+    main.products .submain .buy .info , main.gallery .submain .buy .info{
         width:calc(100%/2.03);
     }
 }
