@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kufam&display=swap" rel="stylesheet">
     <title>Motors</title>
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="body">
@@ -18,7 +19,7 @@
         <li><a href="products.html">products</a></li>
         <li><a href="services.html" >services</a></li>
         <li><a href="gallery.html">gallery</a></li>
-        <li><a href="contact.html"class="active lastchild">contact</a></li>
+        <li><a href="contact.html"class="active lastchild">registration</a></li>
         </ul>
         <span class="fa fa-bars">
             <div class="menu">
@@ -27,7 +28,7 @@
                     <li><a href="products.html">products</a></li>
                     <li><a href="services.html" >services</a></li>
                     <li><a href="gallery.html">gallery</a></li>
-                    <li><a href="contact.html" class="active">contact</a></li>
+                    <li><a href="contact.html" class="active">registration</a></li>
                 </ul>
             </div>
         </span>
@@ -40,8 +41,21 @@
         </div>   
         </div>
         </header>
-        <main>
-            MAIN 
+        <main class="contact">
+            <form id="signup" action="">
+                <h2>sign up</h2>
+                <input type="text" placeholder="first name" name="firstname" id="firstname">
+                <input type="text" placeholder="last name" name="lastname" id="lastname">
+                <input type="text" placeholder="E-mail address" name="email" id="email">
+                <input type="password" placeholder="password" name="password" id="password">
+                <input type="tel" placeholder="phone number" name="tel" id="tel">
+                <input type="text" placeholder="address" name="address" id="address">
+                <select name="gender" id="gender">
+                    <option name="male" name="male">male</option>
+                    <option name="famale" name="famale">famale</option>
+                </select>
+                <input type="submit">
+            </form>
         </main>
         <footer>
             <div class="cont">
@@ -52,7 +66,7 @@
                     <li><a href="products.html">products</a></li>
                     <li><a href="services.html">services</a></li>
                     <li><a href="gallery.html">gallery</a></li>
-                    <li><a href="contact.html" class="lastchild">contact</a></li>
+                    <li><a href="contact.html" class="lastchild">registration</a></li>
                 </ul>
             </div>
             <div class="about">

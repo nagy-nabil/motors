@@ -11,7 +11,7 @@
     width:100%;
     font-family: 'Montserrat', sans-serif;
 }
-header .subhead, main >div , footer .cont{
+header .subhead,main.contact form, main >div , footer .cont{
     width:65%;
 }
 h1 , h2{
@@ -141,6 +141,15 @@ main .one,main .two,main .three{
     justify-content: space-around;
     box-shadow:0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
+main .one .content{
+    display: flex;
+    flex-direction: row;
+}
+main .one .content .subcontent{
+    display: flex;
+    flex-direction: column;
+
+}
 main .two,main .three{
     padding-top:20px;
 }
@@ -152,10 +161,10 @@ main .three .content{
 }
 main .content img{
     width:100%;
-    transition:all .5s ease-in;
+    transition:all .2s ease-in;
 }
 main .content img:hover{
-    transform:scale(1.1);
+    transform:scale(1.02);
 }
 main .content h2{
     font-size:2rem;
@@ -406,6 +415,26 @@ main .submain .buy .info .price img{
     height:16px;
     margin-left:0%;
 }
+main .submain .buy table{
+    width:95%;
+    margin:auto;
+    text-align: left;
+    border-spacing: 0px;
+    margin-bottom: 3%;
+    color:white;
+}
+main .submain .buy table thead{
+    background-color: #d54a4a;
+}
+main .submain .buy table tbody{
+    background-color: black;
+}
+main .submain .buy table td, main .submain .buy table thead th{
+    padding:2%;
+}
+main .submain .buy table tbody tr:hover {
+    background-color:rgb(243, 22, 22);
+}
 /*     main services styling */
 main.services .customer{
     background-color: white;
@@ -453,6 +482,38 @@ main.gallery .submain .buy{
     margin-top:5%;
     width:100%;
 }
+
+/*        contact main styling */
+main.contact #signup{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    margin:3% 0;
+    background-color: white;
+    box-shadow:0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+main.contact #signup h2{
+    margin:2% auto;
+    font-size: 1.8rem;
+    color:#333;
+}
+main.contact #signup input , main.contact #signup select{
+    outline:none;
+    width:30%;
+    position: relative;
+    border:1px solid rgb(204, 202, 206);
+    padding:10px;
+    margin:10px;
+}
+main.contact #signup input[type="submit"]{
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+main.contact #signup input[type="submit"]:hover{
+    background-color: #d54a4a;
+    color:white;
+}
 /*   MEDIA QUARY   */
 @media screen and (max-width:1500px){
     main.products .submain aside .category h2{
@@ -462,10 +523,13 @@ main.gallery .submain .buy{
     main.products .submain .buy .info , main.gallery .submain .buy .info{
         width:calc(100%/2.03);
     }
+    main .one .content{
+        flex-direction: column;
+    }
 }
 @media screen and (max-width:900px) {
     header{width:100%}
-    header .subhead ,main >div, footer .cont,main.products .submain .buy,main.products .submain aside{
+    header .subhead ,main >div, footer .cont,main.products .submain .buy,main.contact #signup,main.products .submain aside{
         width:95%;
     }
     header>ul.nav{
@@ -493,12 +557,21 @@ main.gallery .submain .buy{
     main .two .content, main .three .content{
         width:100%;
     }
+    main .one .content{
+        flex-direction: column;
+    }
     main .gallery .imgcont{
         width:calc(100%/2);
     }
     main .submain .buy {
         order:1;
         justify-content:center;
+    }
+    main .submain .buy table{
+        width:100%;
+    }
+    main .submain .buy table td, main .submain .buy table thead th{
+        padding:1%;
     }
     main.products .submain .buy .info , main.gallery .submain .buy .info {
         width:calc(100%/1.2);
@@ -516,7 +589,7 @@ main.gallery .submain .buy{
     footer .cont{
         flex-direction:column;
     }
-    footer .cont div, footer .cont div.mainmenu{
+    footer .cont div, footer .cont div.mainmenu,main.contact #signup input{
         width:98%;
     }
 }
